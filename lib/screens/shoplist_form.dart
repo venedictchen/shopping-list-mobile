@@ -135,7 +135,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                               ),
                               actions: [
                                 TextButton(
-                                  child: const Text('OK'),
+                                  child: const Text ('OK'),
                                   onPressed: () {
                                     Navigator.pop(context);
                                   },
@@ -144,8 +144,8 @@ class _ShopFormPageState extends State<ShopFormPage> {
                             );
                           },
                         );
+                        _formKey.currentState!.reset();
                       }
-                      _formKey.currentState!.reset();
                     },
                     child: const Text(
                       "Save",
