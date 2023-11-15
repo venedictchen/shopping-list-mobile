@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_list/widgets/shop_card.dart';
 import 'package:shopping_list/widgets/left_drawer.dart';
-
-
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';  
 
 class MyHomePage extends StatelessWidget {
   MyHomePage({Key? key}) : super(key: key);
@@ -14,7 +14,12 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Provider(
+      create: (_) {
+        CookieRequest request = CookieRequest();
+        return request;
+      },
+          child:Scaffold(
       appBar: AppBar(
         title: const Text(
           'Shopping List',
@@ -60,7 +65,8 @@ class MyHomePage extends StatelessWidget {
           ),
         ),
       ),
+    )
     );
+
   }
 }
-
